@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malaria Cell Image Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="upload-section">
+            <h1>Upload Malaria Cell Image</h1>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" id="imageInput" accept="image/*" required>
+                <img id="uploadedImage" src="#" alt="Uploaded Image" style="display:none;">
+                <button type="submit">Predict</button>
+            </form>
+        </div>
+
+        {% if prediction_result %}
+            <div class="prediction-section">
+                <h2>Result:</h2>
+                <div class="prediction-box">
+                    <p>Image: {{ prediction_result.image }}</p>
+                    <p>Prediction Label: {{ prediction_result.prediction_label }}</p>
+                    <p>Prediction Probability: {{ prediction_result.prediction_probability }}</p>
+                    <!-- You can add more details or customize the display as needed -->
+                </div>
+                <!-- Display the uploaded image on the right side after prediction -->
+                
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+		// Display the uploaded image on the left side
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+
+				reader.onload = function (e) {
+					document.getElementById('uploadedImage').style.display = 'block';
+					document.getElementById('uploadedImage').src = e.target.result;
+				};
+
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+
+		document.getElementById('imageInput').addEventListener('change', function () {
+			readURL(this);
+		});
+
+		// Display the uploaded image on the right side after prediction
+		{% if prediction_result %}
+			document.addEventListener('DOMContentLoaded', function() {
+				document.getElementById('resultImage').src = document.getElementById('uploadedImage').src;
+			});
+		{% endif %}
+    </script>
+</body>
+</html>

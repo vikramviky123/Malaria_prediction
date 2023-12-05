@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    width: 80%;
+    /* Adjust the width as needed */
+}
+
+.upload-section,
+.prediction-section {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    /* Dark red border for image upload */
+    border-color: darkred;
+}
+
+.upload-section {
+    margin-right: 20px;
+}
+
+.upload-section h1,
+.prediction-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#imageInput {
+    margin-bottom: 20px;
+}
+
+#uploadedImage,
+#resultImage {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    /* Ensure the images are visible */
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: darkred;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8B0000;
+    /* Darker red on hover */
+}
+
+.prediction-box {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}

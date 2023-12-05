@@ -1,0 +1,21 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://storage.googleapis.com/kaggle-data-sets/87153/200743/bundle/archive.zip?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20231204%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20231204T180210Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=32b90e4745b7715f5b1673f3fec248a8efa956353567114d84b6308bac2bfb1d2874271bbec506d4f267279358235e86163ab38188318d098d7ff94563b7b636cb5ca0da59b114f0f6bbefa25e218a92eaffa4bb4ae077719f4963f3fa811efec2e25e3e98d8477efdfbd2972effc907a5a41ba5a2ddc70db430f921418302e8c766f081628cd0bbe85d2a5824f573f9a2d6ab3976060818a913f201e302c0c3baa11d120127e9773f2f43ca80292a5a8b43ca6e53c1eb093fdca80f85e72db786575531f7525bd7a2b5382a3f01f7858f93f60c33674181013c890b7c87b620caa255d8849c7f99f495728a741b46050ccd10b272e334faf38280d2446df854
+  local_data_file: artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion
+
+base_model:
+  root_dir: artifacts/base_model
+  base_model_path: artifacts/base_model/base_model.h5
+  updated_base_model_path: artifacts/base_model/base_model_updated.h5
+
+callbacks:
+  root_dir: artifacts/callbacks
+  tensorboard_root_log_dir: artifacts/callbacks/tensorboard_log_dir
+  checkpoint_model_filepath: artifacts/callbacks/checkpoint_dir/model.h5
+
+training:
+  root_dir: artifacts/trained_model
+  trained_model_path: artifacts/trained_model/model.h5
